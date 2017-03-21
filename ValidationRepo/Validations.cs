@@ -9,19 +9,24 @@ namespace ValidationRepo
 {
     public class Validations : IValidation<ITriangle>
     {
-        public void Validate(ITriangle obj)
+        public string Validate(int SideALength, int SideBLength, int SideCLength)
         {
             //check for any side is having invalid number or not
-            if (Utility.CheckForNuLLOrEmpty(obj.SideALength) ||
-               Utility.CheckForNuLLOrEmpty(obj.SideBLength) ||
-                Utility.CheckForNuLLOrEmpty(obj.SideCLength))
-                throw new Exception("Please enter all three sides!");
+            if (Utility.CheckForNuLLOrEmpty(SideALength) ||
+               Utility.CheckForNuLLOrEmpty(SideBLength) ||
+                Utility.CheckForNuLLOrEmpty(SideCLength))
+
+                return "Please enter all three sides!";
 
             //Check for any two sides total is less than the third side or not. 
             //if found then it is inequality theorem and triagle cannot be formed so throw error
-            if ((obj.SideALength + obj.SideBLength) < obj.SideCLength || (obj.SideALength + obj.SideBLength) < obj.SideCLength || (obj.SideALength + obj.SideBLength) < obj.SideCLength)
+            else if ((SideALength + SideBLength) < SideCLength || (SideALength + SideBLength) < SideCLength || (SideALength + SideBLength) < SideCLength)
             {
-                throw new Exception("Triangle cannot be formed! Any two sides total should be grater than the third side.");
+                return "Triangle cannot be formed! Any two sides total should be grater than the third side.";
+            }
+            else
+            {
+                return "";
             }
         }
     }

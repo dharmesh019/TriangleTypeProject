@@ -32,9 +32,9 @@ namespace Trangle_Repository
             return "";
         }
 
-        public void ValidateTriangleSideInputs()
+        public string ValidateTriangleSideInputs()
         {
-            validation.Validate(this);
+           return validation.Validate(this.SideALength, this.SideBLength,this.SideCLength);
         }
 
     }

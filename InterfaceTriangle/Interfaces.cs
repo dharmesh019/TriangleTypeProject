@@ -19,7 +19,7 @@ namespace InterfaceTriangle
         int SideCLength { get; set; }
         string CalculateTriangleType(int SideA, int SideB, int SideC);
 
-        void ValidateTriangleSideInputs();
+        string ValidateTriangleSideInputs();
     }
 
 
@@ -30,7 +30,7 @@ namespace InterfaceTriangle
 
     public interface IValidation<AnyType>
     {
-        void Validate(AnyType obj);
+        string Validate(int SideALength, int SideBLength, int SideCLength);
     }
 
 
