@@ -9,18 +9,22 @@ namespace ValidationRepo
 {
     public class Validations : IValidation<ITriangle>
     {
-        public string Validate(int SideALength, int SideBLength, int SideCLength)
+        public string Validate(string SideALength, string SideBLength, string SideCLength)
         {
-            //check for any side is having invalid number or not
-            if (Utility.CheckForNuLLOrEmpty(SideALength) ||
-               Utility.CheckForNuLLOrEmpty(SideBLength) ||
-                Utility.CheckForNuLLOrEmpty(SideCLength))
-
-                return "Please enter all three sides!";
-
+            
+            //Check for numeric value 
+            if(Utility.CheckForValidInteger(SideALength.ToString()) <= 0 || Utility.CheckForValidInteger(SideALength.ToString()) <=0 || Utility.CheckForValidInteger(SideALength.ToString())<=0)
+            {
+                
+                return "All three sides must be numeric integer types!";
+            }
             //Check for any two sides total is less than the third side or not. 
+            var IntSideALength = Convert.ToInt16(SideALength);
+            var IntSideBLength = Convert.ToInt16(SideBLength);
+            var IntSideCLength = Convert.ToInt16(SideCLength);
+
             //if found then it is inequality theorem and triagle cannot be formed so throw error
-            else if ((SideALength + SideBLength) < SideCLength || (SideALength + SideBLength) < SideCLength || (SideALength + SideBLength) < SideCLength)
+            if ((IntSideALength + IntSideBLength) < IntSideCLength || (IntSideALength + IntSideBLength) < IntSideCLength || (IntSideALength + IntSideBLength) < IntSideCLength)
             {
                 return "Triangle cannot be formed! Any two sides total should be grater than the third side.";
             }

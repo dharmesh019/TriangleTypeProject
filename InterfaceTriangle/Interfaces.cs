@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace InterfaceTriangle
 {
+
     public enum TriangleTypeEnum
     {
         Scalence=1,
@@ -30,7 +31,7 @@ namespace InterfaceTriangle
 
     public interface IValidation<AnyType>
     {
-        string Validate(int SideALength, int SideBLength, int SideCLength);
+        string Validate(string SideALength, string SideBLength, string SideCLength);
     }
 
 

@@ -34,7 +34,7 @@ namespace Trangle_Repository
 
         public string ValidateTriangleSideInputs()
         {
-           return validation.Validate(this.SideALength, this.SideBLength,this.SideCLength);
+           return validation.Validate(this.SideALength.ToString(), this.SideBLength.ToString(),this.SideCLength.ToString());
         }
 
     }

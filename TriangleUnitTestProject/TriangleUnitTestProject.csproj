@@ -48,9 +48,6 @@
     <Compile Include="TriangleUnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\InterfaceTriangle\InterfaceTriangle.csproj">
       <Project>{f2012234-c91e-474d-9ff8-84e50ccd860d}</Project>
       <Name>InterfaceTriangle</Name>
@@ -63,6 +60,9 @@
       <Project>{0b8f4aa3-9a04-4cab-979c-695946fa9e6b}</Project>
       <Name>ValidationRepo</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

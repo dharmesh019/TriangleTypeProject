@@ -14,12 +14,19 @@ namespace TriangleUnitTestProject
    public class TriangleUnitTest
     {
 
+        [TestCase(1,2)]
+        [Test]
+        public int ADD(int a, int b)
+        {
+            return 3;
+        }
+
         [Test, TestCaseSource("TriangleTestCases")]
-        public void TestTriangleSideValue(int SideALength, int SideBLength, int SideCLength)
+        public string TestTriangleSideValue(string SideALength, string SideBLength, string SideCLength)
         {
            Validations ObjValidation = new Validations();
            
-            ObjValidation.Validate(SideALength, SideBLength, SideCLength);
+         return   ObjValidation.Validate(SideALength, SideBLength, SideCLength);
 
 
         }
@@ -31,10 +38,10 @@ namespace TriangleUnitTestProject
             {
                 // This arraylist can be provided from database
                 ArrayList objTestCaseData = new ArrayList();
-                objTestCaseData.Add(new TestCaseData(-1,2,4).Returns(100));
-                objTestCaseData.Add(new TestCaseData(null,null, 20).Returns(400));
+                objTestCaseData.Add(new TestCaseData(-1,2,4).Returns("All three sides must be numeric integer types!"));
+                objTestCaseData.Add(new TestCaseData(null,null, 20).Returns("All three sides must be numeric integer types!"));
                 objTestCaseData.Add(new TestCaseData(2,0, 30).Returns(900));
-                objTestCaseData.Add(new TestCaseData(5, 5).Returns(25));
+                objTestCaseData.Add(new TestCaseData("e",3, "t").Returns("All three sides must be numeric integer types!"));
                 // This arraylist can be provided from database
                 foreach (TestCaseData obj in objTestCaseData)
                 {
