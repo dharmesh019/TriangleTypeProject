@@ -10,12 +10,18 @@ namespace UtilityHelper
     {
         private static bool CheckForNumberic(string ValueToCheck)
         {
-            var res = 0;
-            if (int.TryParse(ValueToCheck, out res))
-                return true;
-            else
+            try
+            {
+                var res = 0;
+                if (int.TryParse(ValueToCheck, out res))
+                    return true;
+                else
+                    return false;
+            }
+            catch
+            {
                 return false;
-
+            }
         }
 
         public static int CheckForValidInteger(string ValueToCheck)
