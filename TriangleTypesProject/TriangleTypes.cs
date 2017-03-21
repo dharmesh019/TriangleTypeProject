@@ -15,6 +15,7 @@ namespace TriangleTypesProject
 {
     public partial class TriangleTypes : Form
     {
+        // no direct referece to repo project decoupling is achieved here as only interface project and factory project is referece in this main project
         private ITriangle TriangleObj = null;
         public TriangleTypes()
         {
@@ -41,7 +42,7 @@ namespace TriangleTypesProject
                 { 
                     //Here Check For Triangle Type 
                      var TriangleTypeString = TriangleObj.CalculateTriangleType( Convert.ToInt16( TriangleObj.SideALength),Convert.ToInt16( TriangleObj.SideBLength), Convert.ToInt16( TriangleObj.SideCLength));
-                    lblTriangleType.Text = TriangleTypeString;
+                    lblTriangleType.Text = "This is " +  TriangleTypeString + " triangle";
                 }
             }
             catch(Exception ex) // here shows the exception message thrown if any validation error is there
@@ -52,6 +53,7 @@ namespace TriangleTypesProject
 
         private void TriangleTypes_Load(object sender, EventArgs e)
         {
+            //when form is loaded, all dependant class objects are created here using simple factory pattern
             TriangleObj = FactoryTriangle.Create();
         }
     }

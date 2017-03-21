@@ -15,11 +15,13 @@ namespace FactoryTriangleNameSpace
     {
         private static IUnityContainer ObjCreationOfProjects = null;
 
+        //Factory used to create Objects of the projects here 
         public static ITriangle  Create()
         {
             if (ObjCreationOfProjects == null)
             {
                 ObjCreationOfProjects = new UnityContainer();
+                //TriangleRepo is registered with Unity Container along with Validations class object is injected in it as it is required 
                 ObjCreationOfProjects.RegisterType<ITriangle, TriangleRepo>("Triangle",
                                 new InjectionConstructor(
                                     new Validations()));

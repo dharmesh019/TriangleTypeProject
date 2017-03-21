@@ -24,6 +24,7 @@ namespace UtilityHelper
             }
         }
 
+        //This function takes string and check for valid integer and return flags accordingly
         public static int CheckForValidInteger(string ValueToCheck)
         {
             if (CheckForNumberic(ValueToCheck))
@@ -37,10 +38,6 @@ namespace UtilityHelper
                 return -1; // InValid Integer value 
         }
 
-        public static bool CheckForTriangleSideValidation(params int[] intValues)
-        {
-
-            return false;
-        }
+       
     }
 }
