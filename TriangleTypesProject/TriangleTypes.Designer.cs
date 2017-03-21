@@ -35,6 +35,8 @@
             this.txtSideCLength = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnCheckTriangleType = new System.Windows.Forms.Button();
+            this.lblValidationMessage = new System.Windows.Forms.Label();
+            this.lblTriangleType = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -95,11 +97,31 @@
             this.btnCheckTriangleType.UseVisualStyleBackColor = true;
             this.btnCheckTriangleType.Click += new System.EventHandler(this.btnCheckTriangleType_Click);
             // 
+            // lblValidationMessage
+            // 
+            this.lblValidationMessage.AutoSize = true;
+            this.lblValidationMessage.ForeColor = System.Drawing.Color.Red;
+            this.lblValidationMessage.Location = new System.Drawing.Point(99, 208);
+            this.lblValidationMessage.Name = "lblValidationMessage";
+            this.lblValidationMessage.Size = new System.Drawing.Size(0, 13);
+            this.lblValidationMessage.TabIndex = 7;
+            // 
+            // lblTriangleType
+            // 
+            this.lblTriangleType.AutoSize = true;
+            this.lblTriangleType.ForeColor = System.Drawing.Color.Green;
+            this.lblTriangleType.Location = new System.Drawing.Point(99, 229);
+            this.lblTriangleType.Name = "lblTriangleType";
+            this.lblTriangleType.Size = new System.Drawing.Size(0, 13);
+            this.lblTriangleType.TabIndex = 8;
+            // 
             // TriangleTypes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(587, 368);
+            this.Controls.Add(this.lblTriangleType);
+            this.Controls.Add(this.lblValidationMessage);
             this.Controls.Add(this.btnCheckTriangleType);
             this.Controls.Add(this.txtSideCLength);
             this.Controls.Add(this.label3);
@@ -123,5 +145,7 @@
         private System.Windows.Forms.TextBox txtSideCLength;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnCheckTriangleType;
+        private System.Windows.Forms.Label lblValidationMessage;
+        private System.Windows.Forms.Label lblTriangleType;
     }
 }

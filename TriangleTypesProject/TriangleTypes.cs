@@ -24,10 +24,19 @@ namespace TriangleTypesProject
             //handle the errors and display the message properly
             try
             {
-                TriangleObj.ValidateTriangleSideInputs();
-                //Here Check For Triangle Type 
-               var TriangleTypeString= TriangleObj.CalculateTriangleType(TriangleObj.SideALength,TriangleObj.SideBLength,TriangleObj.SideCLength);
-               
+                lblValidationMessage.Text = "";
+                lblTriangleType.Text = "";
+                var ValidationMessage = TriangleObj.ValidateTriangleSideInputs();
+                if (!String.IsNullOrEmpty(ValidationMessage))
+                {
+                    lblValidationMessage.Text = ValidationMessage;
+                }
+                else
+                { 
+                    //Here Check For Triangle Type 
+                     var TriangleTypeString = TriangleObj.CalculateTriangleType(TriangleObj.SideALength, TriangleObj.SideBLength, TriangleObj.SideCLength);
+                    lblTriangleType.Text = TriangleTypeString;
+                }
             }
             catch(Exception ex) // here shows the exception message thrown if any validation error is there
             {
