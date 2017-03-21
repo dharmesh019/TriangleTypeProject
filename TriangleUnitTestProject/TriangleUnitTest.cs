@@ -32,12 +32,20 @@ namespace TriangleUnitTestProject
             {
                 // This arraylist can be provided from database
                 ArrayList objTestCaseData = new ArrayList();
+                //negative value not allowed
                 objTestCaseData.Add(new TestCaseData("-1","2","4").Returns("All three sides must be numeric integer types having value greater than 0!"));
+                //Empty values not allowed
                 objTestCaseData.Add(new TestCaseData("","", "20").Returns("All three sides must be numeric integer types having value greater than 0!"));
+                //Value must be greater than 0
                 objTestCaseData.Add(new TestCaseData("2","0", "30").Returns("All three sides must be numeric integer types having value greater than 0!"));
+                //value cannot be string
                 objTestCaseData.Add(new TestCaseData("e","3", "t").Returns("All three sides must be numeric integer types having value greater than 0!"));
+                //summation of two sides must be greater than third side
                 objTestCaseData.Add(new TestCaseData("2", "3", "6").Returns("Triangle cannot be formed! Any two sides total should be grater than the third side."));
+                //Successful Side entry
                 objTestCaseData.Add(new TestCaseData("2", "3", "4").Returns(""));
+                //Side values must be integer number not a float or decimal
+                objTestCaseData.Add(new TestCaseData("2.3", "3", "4").Returns("All three sides must be numeric integer types having value greater than 0!"));
                 // This arraylist can be provided from database
                 foreach (TestCaseData obj in objTestCaseData)
                 {

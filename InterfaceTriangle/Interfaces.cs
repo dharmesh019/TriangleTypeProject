@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InterfaceTriangle
 {
-
+    //this Enum indicates the various Triangle types can be formed using three sides 
     public enum TriangleTypeEnum
     {
         Scalence=1,
@@ -15,6 +15,7 @@ namespace InterfaceTriangle
     }
     public interface ITriangle
     {
+        
         string SideALength { get; set; }
         string SideBLength { get; set; }
         string SideCLength { get; set; }
@@ -31,6 +32,7 @@ namespace InterfaceTriangle
 
     public interface IValidation<AnyType>
     {
+        //string variable is used here to validate any input including characters and plugin validation class object when needed for validating the triangle side length
         string Validate(string SideALength, string SideBLength, string SideCLength);
     }
 
