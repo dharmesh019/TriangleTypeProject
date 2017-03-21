@@ -26,7 +26,8 @@ namespace TriangleTypesProject
             {
                 TriangleObj.ValidateTriangleSideInputs();
                 //Here Check For Triangle Type 
-
+               var TriangleTypeString= TriangleObj.CalculateTriangleType(TriangleObj.SideALength,TriangleObj.SideBLength,TriangleObj.SideCLength);
+               
             }
             catch(Exception ex) // here shows the exception message thrown if any validation error is there
             {

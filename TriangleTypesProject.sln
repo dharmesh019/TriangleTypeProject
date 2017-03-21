@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidationRepo", "Validatio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilityHelper", "UtilityHelper\UtilityHelper.csproj", "{6E8B66E9-969B-453F-97BA-22518CB68BB4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriangleUnitTestProject", "TriangleUnitTestProject\TriangleUnitTestProject.csproj", "{6BA4360A-BDA9-439C-84C4-00457B1B276E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{6E8B66E9-969B-453F-97BA-22518CB68BB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E8B66E9-969B-453F-97BA-22518CB68BB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E8B66E9-969B-453F-97BA-22518CB68BB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BA4360A-BDA9-439C-84C4-00457B1B276E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BA4360A-BDA9-439C-84C4-00457B1B276E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BA4360A-BDA9-439C-84C4-00457B1B276E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BA4360A-BDA9-439C-84C4-00457B1B276E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
