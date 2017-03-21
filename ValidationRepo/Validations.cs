@@ -13,10 +13,10 @@ namespace ValidationRepo
         {
             
             //Check for numeric value 
-            if(Utility.CheckForValidInteger(SideALength.ToString()) <= 0 || Utility.CheckForValidInteger(SideALength.ToString()) <=0 || Utility.CheckForValidInteger(SideALength.ToString())<=0)
+            if(Utility.CheckForValidInteger(SideALength.ToString()) <= 0 || Utility.CheckForValidInteger(SideBLength.ToString()) <=0 || Utility.CheckForValidInteger(SideCLength.ToString())<=0)
             {
                 
-                return "All three sides must be numeric integer types!";
+                return "All three sides must be numeric integer types having value greater than 0!";
             }
             //Check for any two sides total is less than the third side or not. 
             var IntSideALength = Convert.ToInt16(SideALength);
