@@ -131,6 +131,7 @@
             this.Controls.Add(this.label1);
             this.Name = "TriangleTypes";
             this.Text = "TriangleTypes";
+            this.Load += new System.EventHandler(this.TriangleTypes_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

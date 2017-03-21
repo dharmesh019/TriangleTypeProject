@@ -15,9 +15,9 @@ namespace InterfaceTriangle
     }
     public interface ITriangle
     {
-        int SideALength { get; set; }
-        int SideBLength { get; set; }
-        int SideCLength { get; set; }
+        string SideALength { get; set; }
+        string SideBLength { get; set; }
+        string SideCLength { get; set; }
         string CalculateTriangleType(int SideA, int SideB, int SideC);
 
         string ValidateTriangleSideInputs();

@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FactoryTriangleNameSpace;
+
 
 namespace TriangleTypesProject
 {
@@ -19,6 +21,7 @@ namespace TriangleTypesProject
             InitializeComponent();
         }
 
+        
         private void btnCheckTriangleType_Click(object sender, EventArgs e)
         {
             //handle the errors and display the message properly
@@ -26,6 +29,9 @@ namespace TriangleTypesProject
             {
                 lblValidationMessage.Text = "";
                 lblTriangleType.Text = "";
+                TriangleObj.SideALength = txtSideALength.Text;
+                TriangleObj.SideBLength = txtSideBLength.Text;
+                TriangleObj.SideCLength = txtSideCLength.Text;
                 var ValidationMessage = TriangleObj.ValidateTriangleSideInputs();
                 if (!String.IsNullOrEmpty(ValidationMessage))
                 {
@@ -34,7 +40,7 @@ namespace TriangleTypesProject
                 else
                 { 
                     //Here Check For Triangle Type 
-                     var TriangleTypeString = TriangleObj.CalculateTriangleType(TriangleObj.SideALength, TriangleObj.SideBLength, TriangleObj.SideCLength);
+                     var TriangleTypeString = TriangleObj.CalculateTriangleType( Convert.ToInt16( TriangleObj.SideALength),Convert.ToInt16( TriangleObj.SideBLength), Convert.ToInt16( TriangleObj.SideCLength));
                     lblTriangleType.Text = TriangleTypeString;
                 }
             }
@@ -42,6 +48,11 @@ namespace TriangleTypesProject
             {
                 MessageBox.Show(ex.Message.ToString());
             }
+        }
+
+        private void TriangleTypes_Load(object sender, EventArgs e)
+        {
+            TriangleObj = FactoryTriangle.Create();
         }
     }
 }

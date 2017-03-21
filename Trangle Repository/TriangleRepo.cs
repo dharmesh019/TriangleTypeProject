@@ -10,26 +10,42 @@ namespace Trangle_Repository
     public class TriangleRepo : ITriangle
     {
         private IValidation<ITriangle> validation = null;
-        public int SideALength
+        public string SideALength
         {
             get; set;
         }
 
-        public int SideBLength
+        public string SideBLength
         {
             get; set;
         }
 
-        public int SideCLength
+        public string SideCLength
         {
             get; set;
         }
 
-        
-
-      public string CalculateTriangleType(int SideA, int SideB, int SideC)
+        public TriangleRepo(IValidation<ITriangle> obj) 
         {
-            return "";
+            validation = obj;
+        }
+
+
+        public string CalculateTriangleType(int SideA, int SideB, int SideC)
+        {
+            //Equilateral Triangle as all Sides are same 
+            if (SideALength == SideBLength && SideALength == SideCLength)
+            {
+                return TriangleTypeEnum.Equilateral.ToString();
+            }
+            else if (SideALength == SideBLength || SideALength == SideCLength || SideBLength == SideCLength) // Any two sides are equal, it is called Isosceles triangle
+            {
+                return TriangleTypeEnum.Isosceles.ToString();
+            }
+            else // None of the sides are equal, It is called Scalene Triangle
+            {
+                return TriangleTypeEnum.Scalence.ToString();
+            }
         }
 
         public string ValidateTriangleSideInputs()
